@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title></title>
+	<style>
+		body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5{margin:0;}
+		ul,ol{padding-left:0;list-style:none;}
+		em,i{font-style:normal;}
+		table{border-collapse:collapse;}
+		th,td{padding:0;}
+		strong,b{font-weight:normal;}
+		a{text-decoration:none;}
+		body{
+			background-color: #003;
+		}
+		.person{
+			position:relative;
+			margin:150px;
+			width:100px;
+			height:200px;
+			animation:run 5s infinite ease-in-out;
+		}
+		.body{
+			position:absolute;
+			top:34px;
+			left:-3px;
+			width:4px;
+			height:80px;
+			background-color: #fff;
+		}
+		.head{
+			position:absolute;
+			top:-18px;
+			left:-22px;
+			width:40px;
+			height:40px;
+			background: url("1.png") no-repeat center/cover;
+			border:3px solid #fff;
+			border-radius:50%;
+			transform-origin:50% 100% 0px;
+			animation:heads 2s infinite alternate;
+		}
+		.head:after{
+			position:absolute;
+			top:-8px;
+			left:-7px;
+			content:"";
+			width:54px;
+			height:10px;
+			background-color: pink;
+			border-radius:3px 3px 0 0;
+		}
+		.head:before{
+			position:absolute;
+			top:-18px;
+			left:5px;
+			content:"";
+			width:30px;
+			height:10px;
+			background-color: pink;
+			border-radius:3px 3px 0 0;
+		}
+		.arm{
+			position:absolute;
+			top:35px;
+			left:-2px;
+			width:50px;
+			height:55px;
+			border-left:3px solid #fff;
+			border-bottom:3px solid #fff;
+			transform-origin:0 0 0;
+			animation:arms 1.2s ease infinite;
+		}
+		.leg{
+			position:absolute;
+			top:116px;
+			left:0px;
+			width:70px;
+			height:77px;
+			border-right:4px solid #fff;
+			border-top:4px solid #fff;
+			transform-origin:0 0 0;
+			animation:legs 1s linear infinite;
+		}
+		.arm.right{
+			animation-delay:0.6s;
+		}.leg.right{
+			animation-delay:0.5s;
+		}
+		@keyframes heads{
+			0%{transform:rotateZ(20deg);}
+			25%{transform:rotateZ(-30deg) skew(15deg,0deg);}
+			50%{transform:rotateZ(20deg);}
+			75%{transform:rotateZ(-30deg) skew(15deg,0deg);}
+			100%{transform:rotateZ(20deg) skew(-15deg,0deg);}
+		}
+
+		@keyframes arms{
+			0%{transform:rotateZ(80deg);}
+			50%{transform:rotateZ(-70deg);}
+			100%{transform:rotateZ(80deg);}
+		}
+		@keyframes legs{
+			0%{transform:rotateZ(-5deg)}
+			50%{transform:rotateZ(150deg)}
+			100%{transform:rotateZ(-5deg)}
+		}
+		@keyframes run{
+			0%{transform:translateX(-220px);}
+			100%{transform:translateX(1500px);}
+		}
+		.text p{
+			position:absolute;
+			top:-77px;
+			left:-165px;
+			padding:5px;
+			color:#fff;
+			font-size:20px;
+			border:1px solid pink;
+			border-radius:5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="person">
+		<div class="head"></div>
+		<div class="body"></div>
+		<div class="arm left"></div>
+		<div class="arm right"></div>
+		<div class="leg left"></div>
+		<div class="leg right"></div>
+		<div class="text">
+			<p>追上我,我就让你嘿嘿嘿</p>
+		</div>	
+	</div>
+</body>
+</html>
